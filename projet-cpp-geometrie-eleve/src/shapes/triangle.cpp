@@ -19,12 +19,55 @@ double Triangle::area(){
 }
 
 Point Triangle::center(){
-
-
+  Point centre;
+  centre.x=(A.x+B.x+C.x)/3;
+  centre.y=(A.y+B.y+C.y)/3;
+  return centre;
 }
   
+void Triangle::draw(){
+  vector<Point> Points={A,B,C};
+  draw_picture(Points);
+}
+
+void Triangle::translate(Point T){
+  centre = center();
+  decax=T.x-centre.x;
+  decay=T.y-centre.y;
+  A.x+=decax;
+  A.y+=decay;
+  B.x+=decax;
+  B.y+=decay;
+  C.x+=decax;
+  C.y+=decay;
+}
+
+void Triangle::resize(double ratio){
   
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
 
 
 
