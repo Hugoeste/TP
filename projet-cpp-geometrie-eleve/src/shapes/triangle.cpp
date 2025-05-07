@@ -78,7 +78,14 @@ void Triangle::rotate(double angle){
 }
 	
 
-
+bool Triangle::equals (Triangle triangle){
+	vector<bool> cote1 ={A.distance(B),B.distance(C),C.distance(A)}
+	vector<bool> cote2 ={triangle.A.distance(triangle.B),triangle.B.distance(triangle.C),triangle.C.distance(triangle.A)}
+	for (int i=0 ; i<3 ; i++){
+		for (int j=0 ; j<3 ; j++){
+			
+		}
+}
 
 
 
