@@ -106,7 +106,18 @@ double long = 0;
 	return py1 or py2 or py3;
 }
 
+bool isEquilateral(){
+	bool cote1 = A.distance(B) ==  B.distance(C);
+	bool cote2 = A.distance(B) ==  C.distance(A);
+	return cote1 and cote2;
+}
 
+bool isIsoceles(){
+	bool cote1 = A.distance(B) ==  B.distance(C);
+	bool cote2 = A.distance(B) ==  C.distance(A);
+	bool cote3 = B.distance(C) == C.distance(A);
+	return cote1 or cote2 or cote3;
+}
 
 
 
