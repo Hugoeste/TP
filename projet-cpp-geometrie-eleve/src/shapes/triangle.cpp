@@ -65,7 +65,13 @@ void Triangle::rotate(double angle){
     
 
 
-
+bool isRightAngled(){
+	double long = 0;
+	bool py1 = A.distance(B)*A.distance(B) + B.distance(C)* B.distance(C) - C.distance(A)*C.distance(A) == 0;
+	bool py2 = A.distance(B)*A.distance(B) + C.distance(A)* C.distance(A) - B.distance(C)*B.distance(C) == 0;
+	bool py3 = C.distance(A)*C.distance(A) + B.distance(C)* B.distance(C) - A.distance(B)*A.distance(B) == 0;
+	return py1 or py2 or py3;
+}
 
 
 
