@@ -16,20 +16,20 @@ Square::Square(Point P, Point R){
     C.y=j;
   }
 }
-Square::double side(){
+double Square::side(){
   double z;
   z=A.x-A.x;
   if(z<0){
   z=-z;
   return z;
 }
-Square::double perimeter(){
+double Square::perimeter(){
     return side()*4;
 }
-Square::double area(){
+double Square::area(){
     return side()*side();
 }
-Square::point center(){
+point Square::center(){
   point w;
   if(A.x<C.x){
     w.x=A.x+(C.x-A.x)/2;
@@ -45,7 +45,7 @@ Square::point center(){
   }
   return w;
 }
-Square::void translate(Point T){
+void Square::translate(Point T){
   point tempA=A;
   point tempC=C;
   tempA.x=T.x-(center().x-A.x);
@@ -55,5 +55,11 @@ Square::void translate(Point T){
   A=tempA;
   C=tempC;
 }
+void Square::resize(double ratio){
+  
+
+  
+
+
   
   
