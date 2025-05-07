@@ -1,9 +1,24 @@
 #include "point.hpp"
 #include "shapes/square.hpp"
-Square::Square(Point P, Point R) : A(P), C(R) {};
+Square::Square(Point P, Point R){ 
+  A=P;
+  C=R;
+  if(A.x>C.x){
+    double j;
+    j=A.x;
+    A.x=C.x;
+    C.x=j;
+  }
+  if(A.y>C.y){
+    double j;
+    j=A.y;
+    A.y=C.y;
+    C.y=j;
+  }
+}
 Square::double side(){
   double z;
-  z=P.x-R.x;
+  z=A.x-A.x;
   if(z<0){
   z=-z;
   return z;
@@ -16,19 +31,29 @@ Square::double area(){
 }
 Square::point center(){
   point w;
-  if(P.x<R.x){
-    w.x=P.x+(R.x-P.x)/2;
+  if(A.x<C.x){
+    w.x=A.x+(C.x-A.x)/2;
   }
   else{
-    w.x=R.x+(P.x-R.x)/2;
+    w.x=C.x+(A.x-C.x)/2;
   }
-  if(P.y<R.y){
-    w.x=P.y+(R.y-P.y)/2;
+  if(A.y<C.y){
+    w.x=A.y+(C.y-A.y)/2;
   }
   else{
-    w.y=R.y+(P.y-R.y)/2;
+    w.y=C.y+(A.y-C.y)/2;
   }
   return w;
 }
-Square::void draw(){}
+Square::void translate(Point T){
+  point tempA=A;
+  point tempC=C;
+  tempA.x=T.x-(center().x-A.x);
+  tempA.y=T.y-(center().y-A.y);
+  tempC.x=T.x+(C.x-center().x);
+  tempC.y=T.y+(C.y-center().y);
+  A=tempA;
+  C=tempC;
+}
+  
   
