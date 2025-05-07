@@ -1,5 +1,6 @@
 #include "point.hpp"
 #include "shapes/triangle.hpp"
+#include <cmath>
 
 Triangle::Triangle(Point P, Point Q, Point R) : A(P), B(Q), C(R) {}
 
@@ -67,7 +68,7 @@ void Triangle::rotate(double angle){
   origine.x=0;
   origine.y=0;
   translate(origine);
-  
+  A.x=
 }
 	
 
