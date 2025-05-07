@@ -1,5 +1,7 @@
 #include "point.hpp"
 #include "shapes/square.hpp"
+#include <cmath>
+using namespace std
 Square::Square(Point P, Point R){ 
   A=P;
   C=R;
@@ -17,11 +19,7 @@ Square::Square(Point P, Point R){
   }
 }
 double Square::side(){
-  double z;
-  z=A.x-A.x;
-  if(z<0){
-  z=-z;
-  return z;
+  return A.distance(C)/sqrt(2);
 }
 double Square::perimeter(){
     return side()*4;
@@ -56,17 +54,40 @@ void Square::translate(Point T){
   C=tempC;
 }
 void Square::resize(double ratio){
-  point tempA=A;
-  point tempC=C;
-  tempA.x=center().x-((center().x-A.x)*ratio);
-  tempA.y=center().y-((center().y-A.y)*ratio);
-  tempC.x=center().x+((C.y-center().y)*ratio);
-  tempC.y=center().y+((C.y-center().y)*ratio);
-  A=tempA;
-  C=tempC;
+  point tempA2=A;
+  point tempC2=C;
+  tempA2.x=center().x-((center().x-A.x)*ratio);
+  tempA2.y=center().y-((center().y-A.y)*ratio);
+  tempC2.x=center().x+((C.y-center().y)*ratio);
+  tempC2.y=center().y+((C.y-center().y)*ratio);
+  A=tempA2;
+  C=tempC2;
+}
+void Square::rotate(angle){
+  point d=center();
+  point F;
+  F.x=0;
+  F.y=0;
+  translate(F);
+  point tempA3;
+  point tempC3;
+  tempA3.x=A.x*cos(angle)-A.y*sin(angle);
+  tempA3.y=A.x*sin(angle)+A.y*cos(angle);
+  tempC3.x=C.x*cos(angle)-C.y*sin(angle);
+  tempC3.y=C.y*sin(angle)+C.y*cos(angle);
+  A=tempA3;
+  C=tempC3;
+  translate(d);
 }
 
-
+bool Square::equals(Square square){
+  if(side()==square.side()){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
   
 
 
