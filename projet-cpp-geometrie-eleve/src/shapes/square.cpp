@@ -30,5 +30,5 @@ Square::point center(){
   }
   return w;
 }
-Square::void draw(){
+Square::void draw(){}
   
