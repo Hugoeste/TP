@@ -28,11 +28,18 @@ void Circle::translate(Point T){
   center.y += T.y;
 }
 void Circle::resize(double ratio){
-  return ratio*radius;
+  return radius*=ratio;
 }
 bool Circle::equals(Circle circle){
-  bool egal = abs(radius - circle.radius) < epsilon;
+  bool egal = False;
+  bool radius_egal = abs(radius - circle.radius) < epsilon;
+  bool center_egal = abs(center - circle.center) < epsilon;
+  if ( center_egal and radius_egal){
+    egal = True;
+  } 
+  return egal;
 }
+
   
   
   
