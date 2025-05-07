@@ -56,7 +56,16 @@ void Square::translate(Point T){
   C=tempC;
 }
 void Square::resize(double ratio){
-  
+  point tempA=A;
+  point tempC=C;
+  tempA.x=center().x-((center().x-A.x)*ratio);
+  tempA.y=center().y-((center().y-A.y)*ratio);
+  tempC.x=center().x+((C.y-center().y)*ratio);
+  tempC.y=center().y+((C.y-center().y)*ratio);
+  A=tempA;
+  C=tempC;
+}
+
 
   
 
