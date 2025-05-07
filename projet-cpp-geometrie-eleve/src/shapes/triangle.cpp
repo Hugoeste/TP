@@ -61,16 +61,12 @@ void Triangle::resize(double ratio){
   C.y=centre.y+vectC.y*ratio;
 }
 
+void Triangle::rotate(double angle){
+    
 
 
 
 
-
-
-
-  
-}
-  
 
 
 
