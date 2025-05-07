@@ -102,6 +102,7 @@ Circle Square::circumscribedCircle(){
   Circle n(A.distance(center()),center());
   return n;
 }
+Circle Square::inscribedCircle(){
   
 
 
