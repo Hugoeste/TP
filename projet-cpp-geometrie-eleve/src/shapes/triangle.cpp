@@ -43,6 +43,33 @@ void Triangle::translate(Point T){
 }
 
 void Triangle::resize(double ratio){
+  centre= center();
+  Point vectA;
+  Point vectB;
+  Point vectC;
+  vectA.x=A.x-centre.x;
+  vectA.y=A.y-centre.y;
+  vectB.x=B.x-centre.x;
+  vectB.y=B.y-centre.y;
+  vectC.x=C.x-centre.x;
+  vectC.y=C.y-centre.y;
+  A.x=centre.x+vectA.x*ratio;
+  A.y=centre.y+vectA.y*ratio;
+  B.x=centre.x+vectB.x*ratio;
+  B.y=centre.y+vectB.y*ratio;
+  C.x=centre.x+vectC.x*ratio;
+  C.y=centre.y+vectC.y*ratio;
+}
+
+
+
+
+
+
+
+
+  
+}
   
 
 
