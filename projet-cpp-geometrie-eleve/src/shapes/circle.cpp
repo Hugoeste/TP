@@ -8,7 +8,7 @@ double abs(x){
 return x;
 }
 double pi = M_PI;
-double epsilon = 0.00000000001;
+double e = 0.00000000001;
 Circle::Circle(double r, Point c) : radius(r), center(c) {};
 
 double Circle::circumference(){
@@ -31,8 +31,8 @@ void Circle::resize(double ratio){
   return ratio*radius;
 }
 bool Circle::equals(Circle circle){
-  bool egal = 
-  
+  bool egal = abs(radius - circle.radius) < epsilon;
+}
   
   
   
