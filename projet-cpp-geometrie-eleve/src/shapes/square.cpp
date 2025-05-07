@@ -88,6 +88,20 @@ bool Square::equals(Square square){
     return false;
   }
 }
+
+void Square::draw(){
+  Point B, D;
+  B.x=A.x;
+  B.y=C.y;
+  D.x=C.x;
+  D.y=A.y;
+  vector<Point> Points={A,B,C,D};
+  draw_picture(Points);
+}
+Circle Square::circumscribedCircle(){
+  Circle n(A.distance(center()),center());
+  return n;
+}
   
 
 
