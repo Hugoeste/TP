@@ -68,7 +68,13 @@ void Triangle::rotate(double angle){
   origine.x=0;
   origine.y=0;
   translate(origine);
-  A.x=
+  A.x=A.x*std::cos(angle)-A.y*std::sin(angle)
+  A.y=A.x*std::sin(angle)-A.y*std::cos(angle)
+  B.x=B.x*std::cos(angle)-B.y*std::sin(angle)
+  B.y=B.x*std::sin(angle)-B.y*std::cos(angle)
+  C.x=C.x*std::cos(angle)-C.y*std::sin(angle)
+  C.y=C.x*std::sin(angle)-C.y*std::cos(angle)
+  translate(centre0);  
 }
 	
 
