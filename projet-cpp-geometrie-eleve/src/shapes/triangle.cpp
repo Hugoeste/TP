@@ -31,9 +31,9 @@ void Triangle::draw(){
 }
 
 void Triangle::translate(Point T){
-  centre = center();
-  decax=T.x-centre.x;
-  decay=T.y-centre.y;
+  Point centre = center();
+  double decax=T.x-centre.x;
+  double decay=T.y-centre.y;
   A.x+=decax;
   A.y+=decay;
   B.x+=decax;
@@ -43,7 +43,7 @@ void Triangle::translate(Point T){
 }
 
 void Triangle::resize(double ratio){
-  centre= center();
+  Point centre= center();
   Point vectA;
   Point vectB;
   Point vectC;
@@ -61,12 +61,45 @@ void Triangle::resize(double ratio){
   C.y=centre.y+vectC.y*ratio;
 }
 
-void Triangle::rotate(double angle){
+void Triangle::rotate(double angle){ 
+  Point centre0= center();
+  Point origine;
+  origine.x=0;
+  origine.y=0;
+  translate(origine);
+  
+}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
     
 
 
 bool isRightAngled(){
-	double long = 0;
+double long = 0;
 	bool py1 = A.distance(B)*A.distance(B) + B.distance(C)* B.distance(C) - C.distance(A)*C.distance(A) == 0;
 	bool py2 = A.distance(B)*A.distance(B) + C.distance(A)* C.distance(A) - B.distance(C)*B.distance(C) == 0;
 	bool py3 = C.distance(A)*C.distance(A) + B.distance(C)* B.distance(C) - A.distance(B)*A.distance(B) == 0;
