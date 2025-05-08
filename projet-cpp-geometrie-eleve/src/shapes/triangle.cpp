@@ -86,6 +86,7 @@ bool Triangle::equals (Triangle triangle){
 			
 		}
 }
+}
 
 
 
@@ -112,21 +113,20 @@ bool Triangle::equals (Triangle triangle){
     
 
 
-bool isRightAngled(){
-double long = 0;
+bool Triangle::isRightAngled(){
 	bool py1 = A.distance(B)*A.distance(B) + B.distance(C)* B.distance(C) - C.distance(A)*C.distance(A) == 0;
 	bool py2 = A.distance(B)*A.distance(B) + C.distance(A)* C.distance(A) - B.distance(C)*B.distance(C) == 0;
 	bool py3 = C.distance(A)*C.distance(A) + B.distance(C)* B.distance(C) - A.distance(B)*A.distance(B) == 0;
 	return py1 or py2 or py3;
 }
 
-bool isEquilateral(){
+bool Triangle::isEquilateral(){
 	bool cote1 = A.distance(B) ==  B.distance(C);
 	bool cote2 = A.distance(B) ==  C.distance(A);
 	return cote1 and cote2;
 }
 
-bool isIsoceles(){
+bool Triangle::isIsoceles(){
 	bool cote1 = A.distance(B) ==  B.distance(C);
 	bool cote2 = A.distance(B) ==  C.distance(A);
 	bool cote3 = B.distance(C) == C.distance(A);

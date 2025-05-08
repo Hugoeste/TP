@@ -1,13 +1,16 @@
 #include "point.hpp"
 #include "shapes/circle.hpp"
-#include <cmath>
-double abs(x){
+#include "CTurtle.hpp"
+#include <numbers>
+#include <cassert>
+#include <iostream>
+double abso(double x){
   if (x<0){
     x = -x;
   }
 return x;
 }
-double pi = M_PI;
+double pi = std::numbers::pi;
 double e = 0.00000000001;
 Circle::Circle(double r, Point c) : radius(r), center(c) {};
 
@@ -16,11 +19,16 @@ double Circle::circumference(){
 }
 
 double Circle::area(){
-  return pi*rad*rad;
+  return pi*radius*radius;
 }
 
-void Circle::draw(){
-  t.circle(radius);
+void Circle::draw() {
+    cturtle::TurtleScreen screen;
+    cturtle::Turtle t(screen);
+	t.penup();
+	t.setposition(center.x,center.y - radius);
+	t.pendown();
+    t.circle(radius);
 }
 
 void Circle::translate(Point T){
@@ -31,10 +39,9 @@ void Circle::resize(double ratio){
   radius*=ratio;
 }
 bool Circle::equals(Circle circle){
-  bool egal = abs(radius - circle.radius) < epsilon;
+  bool egal = abso(radius - circle.radius) < e;
+  
   return egal;
 }
-
-  
   
   
