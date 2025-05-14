@@ -2,6 +2,7 @@
 #include "shapes/square.hpp"
 #include <cmath>
 #include <vector>
+#include "draw.hpp"
 using namespace std;
 Square::Square(Point P, Point R){ 
   A=P;
