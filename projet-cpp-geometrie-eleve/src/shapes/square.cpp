@@ -1,7 +1,8 @@
 #include "point.hpp"
 #include "shapes/square.hpp"
 #include <cmath>
-using namespace std
+#include <vector>
+using namespace std;
 Square::Square(Point P, Point R){ 
   A=P;
   C=R;
@@ -27,8 +28,8 @@ double Square::perimeter(){
 double Square::area(){
     return side()*side();
 }
-point Square::center(){
-  point w;
+Point Square::center(){
+  Point w;
   if(A.x<C.x){
     w.x=A.x+(C.x-A.x)/2;
   }
@@ -44,8 +45,8 @@ point Square::center(){
   return w;
 }
 void Square::translate(Point T){
-  point tempA=A;
-  point tempC=C;
+  Point tempA = A;
+  Point tempC = C;
   tempA.x=T.x-(center().x-A.x);
   tempA.y=T.y-(center().y-A.y);
   tempC.x=T.x+(C.x-center().x);
@@ -54,8 +55,8 @@ void Square::translate(Point T){
   C=tempC;
 }
 void Square::resize(double ratio){
-  point tempA2=A;
-  point tempC2=C;
+  Point tempA2=A;
+  Point tempC2=C;
   tempA2.x=center().x-((center().x-A.x)*ratio);
   tempA2.y=center().y-((center().y-A.y)*ratio);
   tempC2.x=center().x+((C.y-center().y)*ratio);
@@ -63,14 +64,14 @@ void Square::resize(double ratio){
   A=tempA2;
   C=tempC2;
 }
-void Square::rotate(angle){
-  point d=center();
-  point F;
+void Square::rotate(double angle){
+  Point d=center();
+  Point F;
   F.x=0;
   F.y=0;
   translate(F);
-  point tempA3;
-  point tempC3;
+  Point tempA3;
+  Point tempC3;
   tempA3.x=A.x*cos(angle)-A.y*sin(angle);
   tempA3.y=A.x*sin(angle)+A.y*cos(angle);
   tempC3.x=C.x*cos(angle)-C.y*sin(angle);
