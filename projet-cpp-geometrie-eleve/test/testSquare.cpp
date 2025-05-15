@@ -9,7 +9,7 @@
 #include <cmath>
 
 void testSquare() {
-    std::cout << "Start Test for Square class : \n\n";
+    std::cout << "------------------------- Square class -------------------------\n\n";
 
     // Define square for tests
     Square A = Square(Point(), Point());
@@ -22,40 +22,40 @@ void testSquare() {
     double side;
 
     // Test side methods
-    std::cout << "  - side methods : \n";
+    std::cout << "----- Side methods -----\n";
 
-    assert(abs(A.side()) <= epsilon && abs(E.side()) <= epsilon);
-    assert(abs(B.side() - sqrt(90)) <= epsilon);
-    assert(abs(D.side() - 100*C.side()) <= epsilon && abs(D.side()-10) <= epsilon);
+    assert(isEquals(A.side()) && isEquals(E.side()));
+    assert(isEquals(B.side(), sqrt(90)));
+    assert(isEquals(D.side(), 100*C.side()) && isEquals(D.side(), 10));
 
     std::cout << "Success\n\n";
 
     // Test perimeter methods
-    std::cout << "  - perimeter methods : \n";
+    std::cout << "----- Perimeter methods -----\n";
 
-    assert(abs(A.perimeter()) <= epsilon && abs(E.perimeter()) <= epsilon);
-    assert(abs(B.perimeter() - 4*sqrt(90)) <= epsilon);
-    assert(abs(D.perimeter() - 100*C.perimeter()) <= epsilon && (D.perimeter() - 40) <= epsilon);
+    assert(isEquals(A.perimeter()) && isEquals(E.perimeter()));
+    assert(isEquals(B.perimeter(), 4*sqrt(90)));
+    assert(isEquals(D.perimeter(), 100*C.perimeter()) && isEquals(D.perimeter(), 40));
 
     std::cout << "Success\n\n";
 
     // Test area methods
-    std::cout << "  - area methods : \n";
+    std::cout << "----- Area methods -----\n";
 
-    assert(abs(A.area()) <= epsilon && abs(E.area()) <= epsilon);
-    assert(abs(B.area() - 90) <= epsilon);
-    assert(abs(D.area()-10000*C.area()) <= epsilon && abs(D.area() - 100) <= epsilon);
+    assert(isEquals(A.area()) && isEquals(E.area()));
+    assert(isEquals(B.area(), 90));
+    assert(isEquals(D.area(), 10000*C.area()) && isEquals(D.area(), 100));
 
     std::cout << "Success\n\n";
 
     // Test center methods
-    std::cout << "  - center methods : \n";
+    std::cout << "----- Center methods -----\n";
 
-    assert(abs(A.center().x) <= epsilon && abs(A.center().y) <= epsilon);
-    assert(abs(E.center().x-12) <= epsilon && abs(E.center().y-15) <= epsilon);
-    assert(abs(B.center().x-6) <= epsilon && abs(B.center().y-3) <= epsilon);
-    assert(abs(C.center().x+0.05) <= epsilon && abs(C.center().y+0.05) <= epsilon);
-    assert(abs(D.center().x) <= epsilon && abs(D.center().y) <= epsilon);
+    assert(isEquals(A.center().x) && isEquals(A.center().y));
+    assert(isEquals(E.center().x, 12) && isEquals(E.center().y, 15));
+    assert(isEquals(B.center().x, 6) && isEquals(B.center().y, 3));
+    assert(isEquals(C.center().x, -0.05) && isEquals(C.center().y, -0.05));
+    assert(isEquals(D.center().x) && isEquals(D.center().y));
 
     std::cout << "Success\n\n";
 

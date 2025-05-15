@@ -13,7 +13,6 @@ int main() {
 		Point(100, 100),
 		Point(0, 100),
 		Point(0, 0)
-		
 	};
 	
 	// Draw the picture by connecting the points

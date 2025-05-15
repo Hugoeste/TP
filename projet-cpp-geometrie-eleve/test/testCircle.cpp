@@ -8,7 +8,6 @@
 #include <iostream>
 #include <cmath>
 
-
 void testCircle() {
     std::cout << "\n\n------------------------- Circle class -------------------------\n\n";
 
