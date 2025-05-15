@@ -46,5 +46,7 @@ bool Circle::equals(Circle circle){
   
   return egal;
 }
+
+
   
   
