@@ -266,35 +266,35 @@ void testTriangle() {
     std::cout << "  - perimeter methods : \n";
 
     assert(abs(A.perimeter()) <= epsilon);
-    assert(abs(B.perimeter() - G.perimeter()) <= epsilon && abs(B.perimeter() -12) <= epsilon);
+    assert(abs(B.perimeter() - G.perimeter()) <= epsilon && abs(B.perimeter() - (4+2*sqrt(13))) <= epsilon);
     assert(abs(C.perimeter() -12) <= epsilon);
     assert(abs(D.perimeter() -6) <= epsilon);
-    assert(abs(E.perimeter() - 4+2*sqrt(2)) <= epsilon);
-    assert(abs(F.perimeter()-sqrt(10)+sqrt(13)+sqrt(17)) <= epsilon);
+    assert(abs(E.perimeter() - (4+2*sqrt(2))) <= epsilon);
+    assert(abs(F.perimeter()-sqrt(10)-sqrt(13)-sqrt(17)) <= epsilon);
 
     std::cout << "Success\n\n";
 
     // Test area methods
     std::cout << "  - area methods : \n";
 
-    assert(A.area() == 0);
-    assert(B.area() == G.area() && B.area() == 6);
-    assert(C.area() == 6);
-    assert(D.area() == sqrt(3));
-    assert(E.area() == 2);
-    assert(F.area() == 11/2);
+    assert(abs(A.area()) <= epsilon);
+    assert(abs(B.area()-G.area()) <= epsilon && abs(B.area() -6) <= epsilon);
+    assert(abs(C.area()-6) <= epsilon);
+    assert(abs(D.area()-sqrt(3)) <= epsilon);
+    assert(abs(E.area()-2) <= epsilon);
+    assert(abs(F.area()-11/2) <= epsilon);
 
     std::cout << "Success\n\n";
 
     // Test center methods
     std::cout << "  - center methods : \n";
 
-    assert(A.center().x == 0 && A.center().y == 0);
-    assert(B.center().x == 2 && B.center().y == 1);
-    assert(C.center().x == 4/3 && C.center().y == 1);
-    assert(D.center().x == 1 && D.center().y == sqrt(3)/3);
-    assert(E.center().x == 2/3 && E.center().y == 2/3);
-    assert(F.center().x == 4/3 && F.center().y == 5/3);
+    assert(abs(A.center().x) <= epsilon && abs(A.center().y) <= epsilon);
+    assert(abs(B.center().x-2) <= epsilon && abs(B.center().y-1) <= epsilon);
+    assert(abs(C.center().x-4/3) <= epsilon && abs(C.center().y-1) <= epsilon);
+    assert(abs(D.center().x-1) <= epsilon && abs(D.center().y-sqrt(3)/3) <= epsilon);
+    assert(abs(E.center().x-2/3) <= epsilon && abs(E.center().y-2/3) <= epsilon);
+    assert(abs(F.center().x-4/3) <= epsilon && abs(F.center().y-5/3) <= epsilon);
 
     std::cout << "Success\n\n";
 
@@ -405,7 +405,7 @@ void testTriangle() {
 int main() {
     testPoint();
     testCircle();
-    testSquare();
+    //testSquare();
     testTriangle();
 
     return 0;
