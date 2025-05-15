@@ -415,8 +415,8 @@ void testTriangle() {
 
 int main() {
     testPoint();
-    //testCircle();
-    //testSquare();
+    testCircle();
+    testSquare();
     testTriangle();
 
     return 0;
