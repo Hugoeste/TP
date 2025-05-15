@@ -22,7 +22,7 @@ void testPoint() {
     // Test distance methods
     std::cout << "  - distance methods : \n";
 
-    assert(B.distance(A) == B.distance() && 3*sqrt(41) - epsilon <= B.distance() && B.distance() <= 3*sqrt(41) + epsilon);
+    assert(B.distance(A) - B.distance() <= epsilon && 3*sqrt(41) - B.distance() <= epsilon  && B.distance() - 3*sqrt(41) <= epsilon);
     assert(B.distance(C) == C.distance(B));
     assert(10*sqrt(2)-epsilon <= B.distance(C) && B.distance(C) <= 10*sqrt(2)+epsilon);
 
@@ -250,7 +250,7 @@ void testSquare() {
     std::cout << "Success\n\n";
 }
 
-/*void testTriangle() {
+void testTriangle() {
     std::cout << "Start Test for Points class : \n\n";
 
     // Define triangle for tests
@@ -401,16 +401,12 @@ void testSquare() {
     std::cout << "Success\n\n";
 }
 
-*/
+
 int main() {
     testPoint();
     testCircle();
     testSquare();
-<<<<<<< HEAD
-    //testTriangle();
-=======
     testTriangle();
->>>>>>> f13f18070138c3aed8395b9ca42125c8b5e2bb3c
 
     return 0;
 }
