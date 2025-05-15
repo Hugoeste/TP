@@ -1,7 +1,8 @@
 #include "point.hpp"
 #define _USE_MATH_DEFINES
 #include "shapes/circle.hpp"
-#include "CTurtle.hpp"
+#include "draw.hpp"
+#include<vector>
 #include <cmath>
 #include <cassert>
 #include <iostream>
@@ -25,12 +26,14 @@ double Circle::area(){
 }
 
 void Circle::draw() {
-    cturtle::TurtleScreen screen;
-    cturtle::Turtle t(screen);
-	t.penup();
-	t.setposition(center.x,center.y - radius);
-	t.pendown();
-    t.circle(radius);
+    std::vector<Point> points;
+    for (int i = 0; i < 50000; ++i) {
+        double angle = 2.0 * M_PI * i / 50000;
+        double x = center.x + radius * cos(angle);
+        double y = center.y + radius * sin(angle);
+        points.push_back({x, y});
+    }
+	draw_picture(points);
 }
 
 void Circle::translate(Point T){
