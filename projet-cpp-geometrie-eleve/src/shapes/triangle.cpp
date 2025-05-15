@@ -3,7 +3,7 @@
 #include <cmath>
 #include<vector>
 #include "draw.hpp"
-#include <bool>
+#include <iostream>
 using namespace std;
 
 Triangle::Triangle(Point P, Point Q, Point R) : A(P), B(Q), C(R) {}
@@ -72,19 +72,19 @@ void Triangle::rotate(double angle){
   origine.x=0;
   origine.y=0;
   translate(origine);
-  A.x=A.x*cos(angle)-A.y*sin(angle)
-  A.y=A.x*sin(angle)-A.y*cos(angle)
-  B.x=B.x*cos(angle)-B.y*sin(angle)
-  B.y=B.x*sin(angle)-B.y*cos(angle)
-  C.x=C.x*cos(angle)-C.y*sin(angle)
-  C.y=C.x*sin(angle)-C.y*cos(angle)
+  A.x=A.x*cos(angle)-A.y*sin(angle);
+  A.y=A.x*sin(angle)-A.y*cos(angle);
+  B.x=B.x*cos(angle)-B.y*sin(angle);
+  B.y=B.x*sin(angle)-B.y*cos(angle);
+  C.x=C.x*cos(angle)-C.y*sin(angle);
+  C.y=C.x*sin(angle)-C.y*cos(angle);
   translate(centre0);  
 }
 	
 
 bool Triangle::equals (Triangle triangle){
-	vector<bool> cote1 ={A.distance(B),B.distance(C),C.distance(A)}
-	vector<bool> cote2 ={triangle.A.distance(triangle.B),triangle.B.distance(triangle.C),triangle.C.distance(triangle.A)}
+	vector<bool> cote1 ={A.distance(B),B.distance(C),C.distance(A)};
+	vector<bool> cote2 ={triangle.A.distance(triangle.B),triangle.B.distance(triangle.C),triangle.C.distance(triangle.A)};
 	for (int i=0 ; i<3 ; i++){
 		if ( cote1.at(0)==cote2.at(i) ){
 			if ( cote1.at(1) == cote2.at(2-i)){
