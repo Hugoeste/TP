@@ -5,13 +5,19 @@
 #include <cmath>
 #include <cassert>
 #include <iostream>
+
 double abso(double x){
   if (x<0){
     x = -x;
   }
 return x;
 }
+<<<<<<< HEAD
+
+double pi = std::numbers::pi;
+=======
 double pi = M_PI;
+>>>>>>> f13f18070138c3aed8395b9ca42125c8b5e2bb3c
 double e = 0.00000000001;
 Circle::Circle(double r, Point c) : radius(r), center(c) {};
 
@@ -36,6 +42,7 @@ void Circle::translate(Point T){
   center.x += T.x;
   center.y += T.y;
 }
+
 void Circle::resize(double ratio){
   radius*=ratio;
 }

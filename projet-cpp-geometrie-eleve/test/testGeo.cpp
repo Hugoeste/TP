@@ -250,7 +250,7 @@ void testSquare() {
     std::cout << "Success\n\n";
 }
 
-void testTriangle() {
+/*void testTriangle() {
     std::cout << "Start Test for Points class : \n\n";
 
     // Define triangle for tests
@@ -334,18 +334,6 @@ void testTriangle() {
     C = Triangle(Point(), Point(4, 0), Point(0, 3));
     F = Triangle(Point(), Point(3, 1), Point(1, 4));
 
-
-
-
-
-
-
-
-
-
-
-
-
     std::cout << "Success\n\n";
 
     // Test equals methods
@@ -413,11 +401,16 @@ void testTriangle() {
     std::cout << "Success\n\n";
 }
 
+*/
 int main() {
     testPoint();
     testCircle();
     testSquare();
+<<<<<<< HEAD
+    //testTriangle();
+=======
     testTriangle();
+>>>>>>> f13f18070138c3aed8395b9ca42125c8b5e2bb3c
 
     return 0;
 }
