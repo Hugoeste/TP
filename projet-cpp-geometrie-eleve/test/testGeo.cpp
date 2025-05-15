@@ -334,18 +334,6 @@ void testTriangle() {
     C = Triangle(Point(), Point(4, 0), Point(0, 3));
     F = Triangle(Point(), Point(3, 1), Point(1, 4));
 
-
-
-
-
-
-
-
-
-
-
-
-
     std::cout << "Success\n\n";
 
     // Test equals methods
