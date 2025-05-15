@@ -188,24 +188,24 @@ void testSquare() {
     center = A.center();
     A.resize(10000);
     std::cout << A.center().x << " \n" << A.center().y << " \n" << center.x << "\n" << center.y << "\n" << A.side() << "\n";
-    assert(A.center().x == center.x && A.center().y == center.y && A.side() == 0);
+    assert(abs(A.center().x - center.x) <= epsilon && abs(A.center().y - center.y) <= epsilon  && abs(A.side() - 0) <= epsilon);
     
     center = B.center();
     B.resize(2);
     std::cout << B.A.x << " \n" << B.A.y << " \n" << B.C.x << "\n" << B.C.y << "\n" << B.side() << "\n";
-    assert(B.center().x == center.x && B.center().y == center.y && B.side() == 2*sqrt(90));
+    assert(abs(B.center().x - center.x) <= epsilon && abs(B.center().y - center.y) <= epsilon  && abs(B.side() - 2*sqrt(90)) <= epsilon);
 
     center = D.center();
     D.resize(1);
-    assert(D.center().x == center.x && D.center().y == center.y && D.side() == 10);
+    assert(abs(D.center().x - center.x) <= epsilon && abs(D.center().y - center.y) <= epsilon  && abs(D.side() - 10) <= epsilon);
 
     center = D.center();
     D.resize(0);
-    assert(D.center().x == center.x && D.center().y == center.y && D.side() == 0);
+    assert(abs(D.center().x - center.x) <= epsilon && abs(D.center().y - center.y) <= epsilon  && abs(D.side() - 0) <= epsilon);
 
     center = C.center();
     C.resize(-1);
-    assert(C.center().x == center.x && C.center().y == center.y && C.side() == 0.1);
+    assert(abs(C.center().x - center.x) <= epsilon && abs(C.center().y - center.y) <= epsilon  && abs(C.side() - 0.1) <= epsilon);
 
     std::cout << "Success\n\n";
 
