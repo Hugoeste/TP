@@ -89,12 +89,17 @@ bool Triangle::equals (Triangle triangle){
 		if ( cote1.at(0)==cote2.at(i) ){
 			if ( cote1.at(1) == cote2.at(2-i)){
 				if(cote1.at(2)== cote2.at(1-i)){
-
+					return true;
 				}
 			}
-
-	}
-}
+			else if ( cote1.at(1) == cote2.at(1-i)){
+				if(cote1.at(2)== cote2.at(2-i)){
+					return true;
+				}
+			}
+		}
+	}	
+	return false ;
 }
 
 
@@ -112,11 +117,6 @@ bool Triangle::equals (Triangle triangle){
 
 
 
-
-
-
-
-    
 
 
 bool Triangle::isRightAngled(){
