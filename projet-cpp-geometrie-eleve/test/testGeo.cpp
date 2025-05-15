@@ -28,7 +28,7 @@ void testPoint() {
 
     std::cout << "Success\n\n";
 }
-/*
+
 void testCircle() {
     std::cout << "\n\nStart Test for Circle class : \n\n";
 
@@ -102,7 +102,7 @@ void testCircle() {
 
     std::cout << "Success\n\n";
 }
-*/
+
 void testSquare() {
     std::cout << "Start Test for Square class : \n\n";
 
@@ -404,7 +404,7 @@ void testTriangle() {
 
 int main() {
     testPoint();
-   // testCircle();
+    testCircle();
     testSquare();
     testTriangle();
 
