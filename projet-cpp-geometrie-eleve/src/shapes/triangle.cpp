@@ -1,6 +1,8 @@
 #include "point.hpp"
 #include "shapes/triangle.hpp"
 #include <cmath>
+#include<vector>
+#include "draw.hpp"
 
 Triangle::Triangle(Point P, Point Q, Point R) : A(P), B(Q), C(R) {}
 
@@ -16,7 +18,7 @@ double absolue (double a){
 }
 
 double Triangle::area(){
-  return 0.5*absolue(A.x*(B.y-C.y) + B.x*(C.y-A.y) + C.x*(A.y-B.y))
+  return 0.5*absolue(A.x*(B.y-C.y) + B.x*(C.y-A.y) + C.x*(A.y-B.y));
 }
 
 Point Triangle::center(){
@@ -82,10 +84,10 @@ bool Triangle::equals (Triangle triangle){
 	vector<bool> cote1 ={A.distance(B),B.distance(C),C.distance(A)}
 	vector<bool> cote2 ={triangle.A.distance(triangle.B),triangle.B.distance(triangle.C),triangle.C.distance(triangle.A)}
 	for (int i=0 ; i<3 ; i++){
-		for (int j=0 ; j<3 ; j++){
+		if ( cote1.at(0)==cote2.at(i) ){
 			
 		}
-}
+
 }
 
 
