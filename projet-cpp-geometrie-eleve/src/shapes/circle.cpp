@@ -4,12 +4,14 @@
 #include <numbers>
 #include <cassert>
 #include <iostream>
+
 double abso(double x){
   if (x<0){
     x = -x;
   }
 return x;
 }
+
 double pi = std::numbers::pi;
 double e = 0.00000000001;
 Circle::Circle(double r, Point c) : radius(r), center(c) {};
@@ -35,6 +37,7 @@ void Circle::translate(Point T){
   center.x += T.x;
   center.y += T.y;
 }
+
 void Circle::resize(double ratio){
   radius*=ratio;
 }

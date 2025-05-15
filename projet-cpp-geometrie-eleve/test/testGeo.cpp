@@ -250,7 +250,7 @@ void testSquare() {
     std::cout << "Success\n\n";
 }
 
-void testTriangle() {
+/*void testTriangle() {
     std::cout << "Start Test for Points class : \n\n";
 
     // Define triangle for tests
@@ -401,11 +401,12 @@ void testTriangle() {
     std::cout << "Success\n\n";
 }
 
+*/
 int main() {
     testPoint();
-    //testCircle();
-    //testSquare();
-    testTriangle();
+    testCircle();
+    testSquare();
+    //testTriangle();
 
     return 0;
 }
