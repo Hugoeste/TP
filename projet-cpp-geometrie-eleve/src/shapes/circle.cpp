@@ -18,7 +18,7 @@ double e = 0.00000000001;
 Circle::Circle(double r, Point c) : radius(r), center(c) {};
 
 double Circle::circumference(){
-  return 2*pi*radius;
+  return 2*pi*abso(radius);
 }
 
 double Circle::area(){
@@ -45,7 +45,7 @@ void Circle::resize(double ratio){
   radius*=ratio;
 }
 bool Circle::equals(Circle circle){
-  bool egal = abso(radius - circle.radius) < e;
+  bool egal = abso(abso(radius) - abso(circle.radius)) < e;
   
   return egal;
 }
