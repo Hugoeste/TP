@@ -88,12 +88,13 @@ bool Triangle::equals (Triangle triangle){
 	for (int i=0 ; i<3 ; i++){
 		if ( cote1.at(0)==cote2.at(i) ){
 			if ( cote1.at(1) == cote2.at(2-i)){
-				if(cote1.at(2)== cote2.at(
-		}
+				if(cote1.at(2)== cote2.at(1-i)){
 
+				}
+			}
+
+	}
 }
-
-
 
 
 
