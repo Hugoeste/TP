@@ -89,7 +89,7 @@ void Square::draw(){
   B.y=C.y;
   D.x=C.x;
   D.y=A.y;
-  vector<Point> Points={A,B,C,D};
+  vector<Point> Points={A,B,C,D,A};
   draw_picture(Points);
 }
 Circle Square::circumscribedCircle(){
