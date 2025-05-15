@@ -251,7 +251,7 @@ void testSquare() {
 }
 
 void testTriangle() {
-    std::cout << "Start Test for Points class : \n\n";
+    std::cout << "Start Test for triangle class : \n\n";
 
     // Define triangle for tests
     Triangle A = Triangle(Point(), Point(), Point()); // Nul
@@ -265,12 +265,12 @@ void testTriangle() {
     // Test perimeter methods
     std::cout << "  - perimeter methods : \n";
 
-    assert(A.perimeter() == 0);
-    assert(B.perimeter() == G.perimeter() && B.perimeter() == 12);
-    assert(C.perimeter() == 12);
-    assert(D.perimeter() == 6);
-    assert(E.perimeter() == 4+2*sqrt(2));
-    assert(F.perimeter()-sqrt(10)+sqrt(13)+sqrt(17) <= epsilon);
+    assert(abs(A.perimeter()) <= epsilon);
+    assert(abs(B.perimeter() - G.perimeter()) <= epsilon && abs(B.perimeter() -12) <= epsilon);
+    assert(abs(C.perimeter() -12) <= epsilon);
+    assert(abs(D.perimeter() -6) <= epsilon);
+    assert(abs(E.perimeter() - 4+2*sqrt(2)) <= epsilon);
+    assert(abs(F.perimeter()-sqrt(10)+sqrt(13)+sqrt(17)) <= epsilon);
 
     std::cout << "Success\n\n";
 
