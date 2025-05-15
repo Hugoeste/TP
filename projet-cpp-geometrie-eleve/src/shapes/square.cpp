@@ -31,18 +31,8 @@ double Square::area(){
 }
 Point Square::center(){
   Point w;
-  if(A.x<C.x){
-    w.x=A.x+(C.x-A.x)/2;
-  }
-  else{
-    w.x=C.x+(A.x-C.x)/2;
-  }
-  if(A.y<C.y){
-    w.x=A.y+(C.y-A.y)/2;
-  }
-  else{
-    w.y=C.y+(A.y-C.y)/2;
-  }
+  w.x=A.x+((C.x-A.x)/2);
+  w.y=A.y+((C.y-A.y)/2);
   return w;
 }
 void Square::translate(Point T){
