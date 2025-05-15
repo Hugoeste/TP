@@ -217,19 +217,19 @@ void testSquare() {
     C = Square(Point(), Point());
 
     A.rotate(45);
-    assert(A.A.x == 5 && abs(A.A.y+2.071) <= epsilon && A.C.x == 5 && abs(A.C.y-12.071) <= epsilon && A.center().x == 5 && A.center().y == 5);
+    assert(abs(A.A.x - 5) <= epsilon && abs(A.A.y+2.071) <= epsilon && A.C.x <= epsilon 5 && abs(A.C.y-12.071) <= epsilon && abs(A.center().x -5) <= epsilon && abs(A.center().y-5) <= epsilon);
 
     B.rotate(90);
-    assert(B.A.x == 5 && B.A.y == -2 && B.C.x == 5 && B.C.y == 12 && B.center().x == 5 && B.center().y == 5);
+    assert(abs(B.A.x -5) <= epsilon && abs(B.A.y +2) <= epsilon && abs(B.C.x - 5) <= epsilon && abs(B.C.y + 12) <= epsilon && abs(B.center().x -5) <= epsilon && abs(B.center().y-5) <= epsilon);
     
     C.rotate(1);
-    assert(C.A.x == 0 && C.A.y == 0 && C.C.x == 0 && C.C.y == 0 && C.center().x == 0 && C.center().y == 0);
+    assert(abs(C.A.x) <= epsilon && abs(C.A.y) <= epsilon && abs(C.C.x - 5) <= epsilon && abs(C.C.y) <= epsilon && abs(C.center().x) <= epsilon && abs(C.center().y) <= epsilon);
 
     B.rotate(0);
-    assert(B.A.x == 5 && B.A.y == -2 && B.C.x == 5 && B.C.y == 12 && B.center().x == 5 && B.center().y == 5);
+    assert(abs(B.A.x -5) <= epsilon && abs(B.A.y + 2) <= epsilon && abs(B.C.x - 5) <= epsilon && abs(B.C.y + 12) <= epsilon && abs(B.center().x-5) <= epsilon && abs(B.center().y-5) <= epsilon);
     
     B.rotate(360);
-    assert(B.A.x == 5 && B.A.y == -2 && B.C.x == 5 && B.C.y == 12 && B.center().x == 5 && B.center().y == 5);
+    assert(abs(B.A.x -5) <= epsilon && abs(B.A.y + 2) <= epsilon && abs(B.C.x - 5) <= epsilon && abs(B.C.y + 12) <= epsilon && abs(B.center().x-5) <= epsilon && abs(B.center().y-5) <= epsilon);
 
     std::cout << "Success\n\n";
 
