@@ -406,7 +406,11 @@ int main() {
     testPoint();
     testCircle();
     testSquare();
+<<<<<<< HEAD
     //testTriangle();
+=======
+    testTriangle();
+>>>>>>> f13f18070138c3aed8395b9ca42125c8b5e2bb3c
 
     return 0;
 }
