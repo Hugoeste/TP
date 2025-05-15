@@ -31,7 +31,7 @@ Point Triangle::center(){
 }
   
 void Triangle::draw(){
-  vector<Point> Points={A,B,C};
+  vector<Point> Points={A,B,C,A};
   draw_picture(Points);
 }
 
