@@ -165,7 +165,7 @@ void testSquare() {
     P = B.A;
     R = B.C;
     B.translate(Point());    
-    assert(abs(B.A.x - P.x) <= epsilon && B.A.y <= epsilon P.y && B.C.x <= epsilon R.x && B.C.y <= epsilon R.y);
+    assert(abs(B.A.x - P.x) <= epsilon && abs(B.A.y - P.y) <= epsilon && abs(B.C.x - R.x) <= epsilon && abs(B.C.y - R.y) <= epsilon);
     
     P = D.A;
     R = D.C;
@@ -217,7 +217,7 @@ void testSquare() {
     C = Square(Point(), Point());
 
     A.rotate(45);
-    assert(abs(A.A.x - 5) <= epsilon && abs(A.A.y+2.071) <= epsilon && A.C.x <= epsilon 5 && abs(A.C.y-12.071) <= epsilon && abs(A.center().x -5) <= epsilon && abs(A.center().y-5) <= epsilon);
+    assert(abs(A.A.x - 5) <= epsilon && abs(A.A.y+2.071) <= epsilon && A.C.x <= epsilon && abs(A.C.y-12.071) <= epsilon && abs(A.center().x -5) <= epsilon && abs(A.center().y-5) <= epsilon);
 
     B.rotate(90);
     assert(abs(B.A.x -5) <= epsilon && abs(B.A.y +2) <= epsilon && abs(B.C.x - 5) <= epsilon && abs(B.C.y + 12) <= epsilon && abs(B.center().x -5) <= epsilon && abs(B.center().y-5) <= epsilon);
