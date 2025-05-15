@@ -9,7 +9,7 @@
 #include <cmath>
 
 void testSquare() {
-    std::cout << "------------------------- Square class -------------------------\n\n";
+    std::cout << "\n\n------------------------- Square class -------------------------\n\n";
 
     // Define square for tests
     Square A = Square(Point(), Point());
@@ -60,7 +60,7 @@ void testSquare() {
     std::cout << "Success\n\n";
 
     // Test translate methods
-    std::cout << "  - translate methods : \n";
+    std::cout << "----- Translate methods -----\n";
 
     P = A.A;
     R = A.C;
