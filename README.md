@@ -24,7 +24,7 @@ make
 
 OU
 
-g++ -std=c++23 -Iinclude -o main src/*.cpp src/shapes/*.cpp test/*.cpp -lgdi32 -luser32
+g++ -std=c++23 -Iinclude -o test src/*.cpp src/shapes/*.cpp test/*.cpp -lgdi32 -luser32
 
 Executer avec :
 

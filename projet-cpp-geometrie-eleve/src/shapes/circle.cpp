@@ -5,6 +5,7 @@
 #include <cmath>
 #include <cassert>
 #include <iostream>
+
 double abso(double x){
   if (x<0){
     x = -x;
@@ -36,6 +37,7 @@ void Circle::translate(Point T){
   center.x += T.x;
   center.y += T.y;
 }
+
 void Circle::resize(double ratio){
   radius*=ratio;
 }

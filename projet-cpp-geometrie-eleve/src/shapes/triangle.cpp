@@ -89,12 +89,17 @@ bool Triangle::equals (Triangle triangle){
 		if ( cote1.at(0)==cote2.at(i) ){
 			if ( cote1.at(1) == cote2.at(2-i)){
 				if(cote1.at(2)== cote2.at(1-i)){
-
+					return true;
 				}
 			}
-
-	}
-}
+			else if ( cote1.at(1) == cote2.at(1-i)){
+				if(cote1.at(2)== cote2.at(2-i)){
+					return true;
+				}
+			}
+		}
+	}	
+	return false ;
 }
 
 
@@ -112,11 +117,6 @@ bool Triangle::equals (Triangle triangle){
 
 
 
-
-
-
-
-    
 
 
 bool Triangle::isRightAngled(){
@@ -152,10 +152,15 @@ Circle Triangle::inscribedCircle(){
 
 Circle Triangle::circumscribedCircle(){
 	Point center;
-	double radius;
-	center.x = 0;
-	center.y = 0;
-	radius = 2;
+	double radius = (A.distance(B)*A.distance(C)*B.distance(C))/area();
+	double A_ = 2*(B.x-A.x);
+	double B_ = 2*(B.y - A.y);
+	double C_ = B.x*B.x + B.y*B.y - (A.x*A.x + A.y*A.y);
+	double D_ = 2*(C.x-B.x);
+	double E_ = 2*(C.y - B.y);
+	double F_ = C.x*C.x + C.y*C.y -(B.x*B.x + B.y*B.y);
+	center.x = (E_*C_ - B_*F_)/(E_*A_ - B_*D_);
+	center.y = (C_ - A_*center.x)/B_;
 	return Circle(radius,center);
 }
 

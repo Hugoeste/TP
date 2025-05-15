@@ -3,6 +3,7 @@
 #include "shapes/square.hpp"
 #include <cmath>
 #include <vector>
+
 using namespace std;
 Square::Square(Point P, Point R){ 
   A=P;
@@ -20,6 +21,7 @@ Square::Square(Point P, Point R){
     C.y=j;
   }
 }
+
 double Square::side(){
   return A.distance(C)/sqrt(2);
 }
