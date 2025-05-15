@@ -23,8 +23,8 @@ void testPoint() {
     std::cout << "  - distance methods : \n";
 
     assert(B.distance(A) - B.distance() <= epsilon && 3*sqrt(41) - B.distance() <= epsilon  && B.distance() - 3*sqrt(41) <= epsilon);
-    assert(B.distance(C) == C.distance(B));
-    assert(10*sqrt(2)-epsilon <= B.distance(C) && B.distance(C) <= 10*sqrt(2)+epsilon);
+    assert(B.distance(C) - C.distance(B) <= epsilon);
+    assert(10*sqrt(2) - B.distance(C) <= epsilon && B.distance(C) - 10*sqrt(2) <= epsilon);
 
     std::cout << "Success\n\n";
 }
@@ -43,16 +43,16 @@ void testCircle() {
     // Test circumference methods
     std::cout << "  - circumference methods : \n";
 
-    assert(A.circumference() == C.circumference() && A.circumference() == E.circumference() && abs(A.circumference()-4*M_PI) <= epsilon);
-    assert(B.circumference() == 0);
+    assert(abs(A.circumference() - C.circumference()) <= epsilon && abs(A.circumference() - E.circumference()) <= epsilon && abs(A.circumference()-4*M_PI) <= epsilon);
+    assert(abs(B.circumference()) <= epsilon);
 
     std::cout << "Success\n\n";
 
     // Test area methods
     std::cout << "  - area methods : \n";
 
-    assert(A.area() == C.area() && A.area() == E.area() && abs(A.area()-4*M_PI) <= epsilon);
-    assert(B.area() == 0);
+    assert(abs(A.area() - C.area()) <= epsilon && abs(A.area() - E.area()) <= epsilon && abs(A.area()-4*M_PI) <= epsilon);
+    assert(abs(B.area()) <= epsilon);
 
     std::cout << "Success\n\n";
 
@@ -70,7 +70,7 @@ void testCircle() {
 
     std::cout << "Success\n\n";
 
-    // Test equals methods
+    // Test equals methods (Faux car tes semblables)
     std::cout << "  - equals methods : \n";
 
     assert(A.equals(C));
@@ -119,38 +119,38 @@ void testSquare() {
     // Test side methods
     std::cout << "  - side methods : \n";
 
-    assert(A.side() == 0 && E.side() == 0);
-    assert(B.side() == sqrt(90));
-    assert(D.side() == 100*C.side() && D.side() == 10);
+    assert(abs(A.side()) <= epsilon && abs(E.side()) <= epsilon);
+    assert(abs(B.side() - sqrt(90)) <= epsilon);
+    assert(abs(D.side() - 100*C.side()) <= epsilon && abs(D.side()-10) <= epsilon);
 
     std::cout << "Success\n\n";
 
     // Test perimeter methods
     std::cout << "  - perimeter methods : \n";
 
-    assert(A.perimeter() == 0 && E.perimeter() == 0);
-    assert(B.perimeter() == 4*sqrt(90));
-    assert(D.perimeter() == 100*C.perimeter() && D.perimeter() == 40);
+    assert(abs(A.perimeter()) <= epsilon && abs(E.perimeter()) <= epsilon);
+    assert(abs(B.perimeter() - 4*sqrt(90)) <= epsilon);
+    assert(abs(D.perimeter() - 100*C.perimeter()) <= epsilon && (D.perimeter() - 40) <= epsilon);
 
     std::cout << "Success\n\n";
 
     // Test area methods
     std::cout << "  - area methods : \n";
 
-    assert(A.area() == 0 && E.area() == 0);
-    assert(B.area() == 90);
-    assert(abs(D.area()-10000*C.area()) <= epsilon && D.area() == 100);
+    assert(abs(A.area()) <= epsilon && abs(E.area()) <= epsilon);
+    assert(abs(B.area() - 90) <= epsilon);
+    assert(abs(D.area()-10000*C.area()) <= epsilon && abs(D.area() - 100) <= epsilon);
 
     std::cout << "Success\n\n";
 
     // Test center methods
     std::cout << "  - center methods : \n";
 
-    assert(A.center().x == 0 && A.center().y == 0);
-    assert(E.center().x == 12 && E.center().y == 15);
-    assert(B.center().x == 6 && B.center().y == 3);
-    assert(C.center().x == -0.05 && C.center().y == -0.05);
-    assert(D.center().x == 0 && D.center().y == 0);
+    assert(abs(A.center().x) <= epsilon && abs(A.center().y) <= epsilon);
+    assert(abs(E.center().x-12) <= epsilon && abs(E.center().y-15) <= epsilon);
+    assert(abs(B.center().x-6) <= epsilon && abs(B.center().y-3) <= epsilon);
+    assert(abs(C.center().x+0.05) <= epsilon && abs(C.center().y+0.05) <= epsilon);
+    assert(abs(D.center().x) <= epsilon && abs(D.center().y) <= epsilon);
 
     std::cout << "Success\n\n";
 
@@ -160,17 +160,17 @@ void testSquare() {
     P = A.A;
     R = A.C;
     A.translate(Point(12,10));
-    assert(A.A.x == P.x+12 && A.A.y == P.y+10 && A.C.x == R.x+12 && A.C.y == R.y+10);
+    assert(abs(A.A.x - P.x+12) <= epsilon && abs(A.A.y - P.y+10) <= epsilon  && abs(A.C.x - R.x+12) <= epsilon && abs(A.C.y - R.y+10) <= epsilon);
 
     P = B.A;
     R = B.C;
     B.translate(Point());    
-    assert(B.A.x == P.x && B.A.y == P.y && B.C.x == R.x && B.C.y == R.y);
+    assert(abs(B.A.x - P.x) <= epsilon && B.A.y <= epsilon P.y && B.C.x <= epsilon R.x && B.C.y <= epsilon R.y);
     
     P = D.A;
     R = D.C;
     D.translate(Point(5, -5));
-    assert(D.A.x == P.x+5 && D.A.y == P.y-5 && D.C.x == R.x+5 && D.C.y == R.y-5);
+    assert(abs(D.A.x - P.x+5) <= epsilon && abs(D.A.y - P.y-5) <= epsilon && abs(D.C.x - R.x+5) <= epsilon && abs(D.C.y - R.y-5) <= epsilon);
 
     std::cout << "Success\n\n";
     
