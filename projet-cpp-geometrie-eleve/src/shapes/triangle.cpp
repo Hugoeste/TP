@@ -139,8 +139,25 @@ bool Triangle::isIsoceles(){
 	return cote1 or cote2 or cote3;
 }
 
+Circle Triangle::inscribedCircle(){
+	Point center;
+	double radius = (area())/(perimeter()/2);
+	double a = B.distance(C);
+	double b = A.distance(C);
+	double c = A.distance(B);
+	center.x = (a*A.x + b*B.x + c*C.x)/perimeter();
+	center.y = (a*A.y + b*B.y + c*C.y)/perimeter();
+	return Circle(radius,center);
+}
 
-
+Circle Triangle::circumscribedCircle(){
+	Point center;
+	double radius;
+	center.x = 0;
+	center.y = 0;
+	radius = 2;
+	return Circle(radius,center);
+}
 
 
 

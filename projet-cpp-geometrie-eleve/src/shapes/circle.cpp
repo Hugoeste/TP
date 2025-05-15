@@ -1,7 +1,8 @@
 #include "point.hpp"
+#define _USE_MATH_DEFINES
 #include "shapes/circle.hpp"
 #include "CTurtle.hpp"
-#include <numbers>
+#include <cmath>
 #include <cassert>
 #include <iostream>
 
