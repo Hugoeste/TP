@@ -95,7 +95,7 @@ bool Triangle::equals (Triangle triangle){
 
 	}
 }
-
+}
 
 
 
