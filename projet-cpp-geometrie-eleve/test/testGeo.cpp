@@ -22,9 +22,9 @@ void testPoint() {
     // Test distance methods
     std::cout << "  - distance methods : \n";
 
-    assert(B.distance(A) - B.distance() <= epsilon && 3*sqrt(41) - B.distance() <= epsilon  && B.distance() - 3*sqrt(41) <= epsilon);
-    assert(B.distance(C) - C.distance(B) <= epsilon);
-    assert(10*sqrt(2) - B.distance(C) <= epsilon && B.distance(C) - 10*sqrt(2) <= epsilon);
+    assert(abs(B.distance(A) - B.distance()) <= epsilon && abs(3*sqrt(41) - B.distance()) <= epsilon && abs(B.distance() - 3*sqrt(41)) <= epsilon);
+    assert(abs(B.distance(C) - C.distance(B)) <= epsilon);
+    assert(abs(10*sqrt(2) - B.distance(C)) <= epsilon && abs(B.distance(C) - 10*sqrt(2)) <= epsilon);
 
     std::cout << "Success\n\n";
 }
