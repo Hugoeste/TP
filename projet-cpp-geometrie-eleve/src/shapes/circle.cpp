@@ -11,7 +11,7 @@ double abso(double x){
   }
 return x;
 }
-double pi = std::numbers::pi;
+double pi = M_PI;
 double e = 0.00000000001;
 Circle::Circle(double r, Point c) : radius(r), center(c) {};
 
