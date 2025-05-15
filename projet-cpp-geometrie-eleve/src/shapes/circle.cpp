@@ -1,28 +1,22 @@
-#include "point.hpp"
 #define _USE_MATH_DEFINES
+
+#include "point.hpp"
 #include "shapes/circle.hpp"
 #include "draw.hpp"
-#include<vector>
+#include "..\..\test\include\compareDouble.hpp"
+#include <vector>
 #include <cmath>
 #include <cassert>
 #include <iostream>
 
-double abso(double x){
-  if (x<0){
-    x = -x;
-  }
-return x;
-}
-double pi = M_PI;
-double e = 0.00000000001;
 Circle::Circle(double r, Point c) : radius(r), center(c) {};
 
 double Circle::circumference(){
-  return 2*pi*abso(radius);
+  return 2*M_PI*abs(radius);
 }
 
 double Circle::area(){
-  return pi*radius*radius;
+  return M_PI*radius*radius;
 }
 
 void Circle::draw() {
@@ -44,10 +38,9 @@ void Circle::translate(Point T){
 void Circle::resize(double ratio){
   radius*=ratio;
 }
+
 bool Circle::equals(Circle circle){
-  bool egal = abso(abso(radius) - abso(circle.radius)) < e;
-  
-  return egal;
+  return isEquals(abs(radius), abs(circle.radius)) && center.equals(circle.center);
 }
 
 
