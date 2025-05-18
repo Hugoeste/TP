@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/ptifo/Desktop/projet/TP/projet-cpp-geometrie-eleve/test",
-      "program": "c:/Users/ptifo/Desktop/projet/TP/projet-cpp-geometrie-eleve/test/build/Debug/outDebug",
+      "cwd": "c:/Users/ptifo/Desktop/projet/TP/test",
+      "program": "c:/Users/ptifo/Desktop/projet/TP/test/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
