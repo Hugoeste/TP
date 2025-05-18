@@ -1,62 +1,51 @@
+#define _USE_MATH_DEFINES
+
 #include "point.hpp"
-#include "draw.hpp"
 #include "shapes/square.hpp"
-#include <cmath>
+#include "draw.hpp"
+#include "..\..\test\include\compareDouble.hpp"
 #include <vector>
+#include <cmath>
+#include <cassert>
+#include <iostream>
 
 using namespace std;
-Square::Square(Point P, Point R){ 
-  A=P;
-  C=R;
-  if(A.x>C.x){
-    double j;
-    j=A.x;
-    A.x=C.x;
-    C.x=j;
-  }
-  if(A.y>C.y){
-    double j;
-    j=A.y;
-    A.y=C.y;
-    C.y=j;
-  }
-}
+
+Square::Square(Point P, Point R) : A(P), C(R) {}
 
 double Square::side(){
   return A.distance(C)/sqrt(2);
 }
+
 double Square::perimeter(){
     return side()*4;
 }
+
 double Square::area(){
     return side()*side();
 }
+
 Point Square::center(){
   Point w;
-  w.x=A.x+((C.x-A.x)/2);
-  w.y=A.y+((C.y-A.y)/2);
+  w.x = (C.x + A.x) / 2;
+  w.y = (C.y + A.y) / 2;
   return w;
 }
+
 void Square::translate(Point T){
-  Point tempA = A;
-  Point tempC = C;
-  tempA.x=T.x-(center().x-A.x);
-  tempA.y=T.y-(center().y-A.y);
-  tempC.x=T.x+(C.x-center().x);
-  tempC.y=T.y+(C.y-center().y);
-  A=tempA;
-  C=tempC;
+  A.x += T.x;
+  A.y += T.y;
+  C.x += T.x;
+  C.y += T.y;
 }
+
 void Square::resize(double ratio){
-  Point tempA2=A;
-  Point tempC2=C;
-  tempA2.x=center().x-((center().x-A.x)*ratio);
-  tempA2.y=center().y-((center().y-A.y)*ratio);
-  tempC2.x=center().x+((C.y-center().y)*ratio);
-  tempC2.y=center().y+((C.y-center().y)*ratio);
-  A=tempA2;
-  C=tempC2;
+  A.x = center().x-((center().x-A.x)*ratio);
+  A.y = center().y-((center().y-A.y)*ratio);
+  C.x = center().x+((C.y-center().y)*ratio);
+  C.y = center().y+((C.y-center().y)*ratio);
 }
+
 void Square::rotate(double angle){
   Point d=center();
   Point F;
@@ -92,10 +81,12 @@ void Square::draw(){
   vector<Point> Points={A,B,C,D,A};
   draw_picture(Points);
 }
+
 Circle Square::circumscribedCircle(){
   Circle n(A.distance(center()),center());
   return n;
 }
+
 Circle Square::inscribedCircle(){
   Circle p((side()/2),center());
   return p;

@@ -62,25 +62,19 @@ void testSquare() {
     // Test translate methods
     std::cout << "----- Translate methods -----\n";
 
-    P = A.A;
-    R = A.C;
     A.translate(Point(12,10));
-    assert(abs(A.A.x - P.x+12) <= epsilon && abs(A.A.y - P.y+10) <= epsilon  && abs(A.C.x - R.x+12) <= epsilon && abs(A.C.y - R.y+10) <= epsilon);
+    assert(isEquals(A.A.x, 12) && isEquals(A.A.y, 10)  && isEquals(A.C.x, 12) && isEquals(A.C.y, 10));
 
-    P = B.A;
-    R = B.C;
     B.translate(Point());    
-    assert(abs(B.A.x - P.x) <= epsilon && abs(B.A.y - P.y) <= epsilon && abs(B.C.x - R.x) <= epsilon && abs(B.C.y - R.y) <= epsilon);
+    assert(isEquals(B.A.x, 12) && isEquals(B.A.y, 6) && isEquals(B.C.x) && isEquals(B.C.y));
     
-    P = D.A;
-    R = D.C;
     D.translate(Point(5, -5));
-    assert(abs(D.A.x - P.x+5) <= epsilon && abs(D.A.y - P.y-5) <= epsilon && abs(D.C.x - R.x+5) <= epsilon && abs(D.C.y - R.y-5) <= epsilon);
+    assert(isEquals(D.A.x) && isEquals(D.A.y) && isEquals(D.C.x, 10) && isEquals(D.C.y, -10));
 
     std::cout << "Success\n\n";
     
     // Test equals methods
-    std::cout << "  - equals methods : \n";
+    std::cout << "----- Equals methods -----\n";
 
     assert(A.equals(E));
     assert(!C.equals(D));
@@ -88,7 +82,7 @@ void testSquare() {
     std::cout << "Success\n\n";
 
     // Test resize methods
-    std::cout << "  - resize methods : \n";
+    std::cout << "----- Resize methods -----\n";
 
     center = A.center();
     A.resize(10000);
@@ -115,7 +109,7 @@ void testSquare() {
     std::cout << "Success\n\n";
 
     // Test rotate methods
-    std::cout << "  - rotate methods : \n";
+    std::cout << "----- Rotate methods -----\n";
 
     A = Square(Point(), Point(10,10));
     B = Square(Point(-2, 5), Point(12, 5));
@@ -139,7 +133,7 @@ void testSquare() {
     std::cout << "Success\n\n";
 
     // Test inscribedCircle methods
-    std::cout << "  - inscribedCircle methods : \n";
+    std::cout << "----- InscribedCircle methods -----\n";
 
     assert(C.inscribedCircle().equals(Circle(0, Point())) && C.inscribedCircle().center.x == 0 && C.inscribedCircle().center.y == 0);
     assert(B.inscribedCircle().equals(Circle((7*sqrt(2))/2, Point(5, 5))) && B.inscribedCircle().center.x == 5 && B.inscribedCircle().center.y == 5);
@@ -147,7 +141,7 @@ void testSquare() {
     std::cout << "Success\n\n";
 
     // Test circumscribedCircle methods
-    std::cout << "  - circumscribedCircle methods : \n";
+    std::cout << "----- CircumscribedCircle methods -----\n";
 
     assert(C.circumscribedCircle().equals(Circle(0, Point())) && C.circumscribedCircle().center.x == 0 && C.circumscribedCircle().center.y == 0);
     assert(B.circumscribedCircle().equals(Circle(7, Point(5, 5))) && B.circumscribedCircle().center.x == 5 && B.circumscribedCircle().center.y == 5);
