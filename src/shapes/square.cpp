@@ -40,10 +40,13 @@ void Square::translate(Point T){
 }
 
 void Square::resize(double ratio){
-  A.x = center().x-((center().x-A.x)*ratio);
-  A.y = center().y-((center().y-A.y)*ratio);
-  C.x = center().x+((C.y-center().y)*ratio);
-  C.y = center().y+((C.y-center().y)*ratio);
+  Point centre = center();
+  double cote = side();
+
+  A.x = centre.x + (cote / 2) * ratio;
+  A.y = centre.y + (cote / 2) * ratio;
+  C.x = centre.x - (cote / 2) * ratio;
+  C.y = centre.y - (cote / 2) * ratio;
 }
 
 void Square::rotate(double angle){
@@ -91,8 +94,3 @@ Circle Square::inscribedCircle(){
   Circle p((side()/2),center());
   return p;
 }
-  
-
-
-  
-  
