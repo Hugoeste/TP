@@ -35,4 +35,4 @@ Executer avec :
     - main.cpp : point d'entrée
     - include/ : Fichier header
     - src/ : Fichier d'implémentation
-    -test/ : programmes de test
+    - test/ : programmes de test
