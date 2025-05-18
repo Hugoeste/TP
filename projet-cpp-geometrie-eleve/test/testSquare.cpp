@@ -86,7 +86,7 @@ void testSquare() {
 
     center = A.center();
     A.resize(10000);
-    std::cout << A.center().x << " \n" << A.center().y << " \n" << center.x << "\n" << center.y << "\n" << A.side() << "\n";
+    std::cout << A.center().x << "ada \n" << A.center().y << " \n" << center.x << "\n" << center.y << "\n" << A.side() << "\n";
     assert(abs(A.center().x - center.x) <= epsilon && abs(A.center().y - center.y) <= epsilon  && abs(A.side() - 0) <= epsilon);
     
     center = B.center();
